@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KJ Trinity Academy of Engineering — Offline Campus Navigation</title>
+  <meta name="description" content="Offline campus navigation for KJ Trinity Academy of Engineering (KJTAE). Open index.html to run locally." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/campus-placeholder.svg" alt="KJTAE" class="logo-img"/>
+        <div>
+          <h1>KJ Trinity Academy of Engineering</h1>
+          <p class="subtitle">Offline Campus Navigator — Yewalewadi / Kondhwa, Pune</p>
+        </div>
+      </div>
+
+      <nav class="main-nav" id="nav">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#departments" class="nav-link">Departments</a>
+        <a href="#map" class="nav-link">Campus Map</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <h2>Find buildings, departments, labs, hostels and more (Offline)</h2>
+        <p>Open this site without internet. Replace placeholders with official photos in /images/ to personalize.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#departments">Explore Departments</a>
+          <a class="btn ghost" href="#map">View Campus Map</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPARTMENTS -->
+    <section id="departments" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h3>All Departments (KJTAE)</h3>
+          <div class="search-wrap">
+            <input id="searchInput" type="search" placeholder="Search departments" aria-label="Search departments"/>
+          </div>
+        </div>
+
+        <div id="deptGrid" class="grid"></div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section id="map" class="section map-section">
+      <div class="container">
+        <h3>Campus Map (Offline)</h3>
+        <p>This is a simple labeled campus map included as SVG (offline).</p>
+        <div class="map-embed">
+          <img src="images/map-annotated.svg" alt="Annotated campus map" class="responsive-map"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section gallery-section">
+      <div class="container">
+        <h3>Campus Gallery (placeholders)</h3>
+        <div class="gallery-grid">
+          <img src="images/building-placeholder.svg" alt="Academic Building">
+          <img src="images/library-placeholder.svg" alt="Library">
+          <img src="images/labs-placeholder.svg" alt="Labs">
+          <img src="images/hostel-placeholder.svg" alt="Hostel">
+          <img src="images/auditorium-placeholder.svg" alt="Auditorium">
+          <img src="images/sports-placeholder.svg" alt="Sports Ground">
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h3>Contact / Help Desk</h3>
+        <div class="contact-grid">
+          <div>
+            <h4>Campus Address</h4>
+            <p><strong>KJ Trinity Academy of Engineering (KJTAE)</strong><br>
+               S. No. 25 &amp; 27, Kondhwa-Saswad Road, Bopdev Ghat / Yewalewadi, Pune 411048.</p>
+            <p><strong>Phone:</strong> 8446101199 / 8446091199</p>
+            <p><strong>Email:</strong> os.tae@kjei.edu.in</p>
+          </div>
+          <div>
+            <h4>Offline Notes</h4>
+            <ul>
+              <li>All photos are placeholders in /images/. Replace them with official photos (see README.txt).</li>
+              <li>To make the site fully offline with official photos, download images and place them in the images/ folder with the exact filenames.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> KJ Trinity Academy of Engineering — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Department detail modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+      <img id="modalImg" src="" alt="" />
+      <div class="modal-body">
+        <h4 id="modalTitle"></h4>
+        <p id="modalDesc"></p>
+        <p><strong>Location:</strong> <span id="modalLocation"></span></p>
+        <p><strong>Facilities:</strong> <span id="modalFacilities"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
